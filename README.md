@@ -27,3 +27,11 @@ Boilerplate for React app
     * Starts a development server that allows live reload when a file is saved
   * `start:visualize`
     * Same as `start:dev` and also shows a visual representation of module sizes
+
+## Issues:
+  * On Windows, there may be an issue with `node-sass` where bindings may not be found for the current environment
+    * Known fix - Uninstall and reinstall `node-sass`
+      ```sh
+      npm uninstall -D node-sass
+      npm install -D node-sass
+      ```
