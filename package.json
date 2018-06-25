@@ -8,6 +8,7 @@
     "build:local": "webpack --env.prod --env.local",
     "dev": "webpack --env.dev",
     "dev:local": "webpack --env.dev --env.local",
+    "setup": "node ./src/setup.js",
     "start:dev": "webpack-dev-server --env.dev",
     "start:visualize": "webpack-dev-server --env.dev --env.visualize"
   },
@@ -48,6 +49,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
+    "shelljs": "^0.8.2",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
     "webpack-bundle-analyzer": "^2.13.1",
@@ -56,6 +58,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "chalk": "^2.4.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
