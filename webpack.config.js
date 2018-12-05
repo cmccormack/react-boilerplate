@@ -77,7 +77,7 @@ module.exports = env => {
       }),
       new MiniCssExtractPlugin({
         filename: "assets/styles/[name].css",
-        chunFilename: "[id].css",
+        chunkFilename: "[id].css",
       }),
       visualize && new Visualizer(),
     ].filter(_=>_),
