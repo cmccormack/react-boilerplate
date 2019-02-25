@@ -7,7 +7,7 @@ const Visualizer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 
 module.exports = env => {
 
-  const { prod=false, local=false, visualize=false } = env
+  const { prod=false, local=!prod, visualize=false } = env
   console.info(`webpack env: ${prod ? "production" : "development"}`)
 
   return {
