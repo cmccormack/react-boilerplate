@@ -9,24 +9,30 @@ Boilerplate for React app
   * `cd react-boilerplate`
 3. Install dependencies
   * `npm install`
-4. Test success by running in developer server
-  * `npm run start:dev`
+4. Test success by running in development server
+  * `npm run dev:start`
     * A new browser tab should open `http://localhost:9000/`
     * A success message should be displayed in the browser tab
 
 ## NPM Scripts:
   * `build`
-    * Outputs bundle and assets to "/public" directory with "production" flag
+    * Outputs bundle and assets to "/dist" directory in "production" mode
   * `build:local`
-    * Same as `build` but sets localPath to a relative directory to enable testing on localhost
-  * `dev`
-    * Outputs bundle and assets to "/public" directory with "development" flag
-  * `dev:local`
-    * Same as `dev` but sets localPath to a relative directory to enable testing on localhost
-  * `start:dev`
-    * Starts a development server that allows live reload when a file is saved
-  * `start:visualize`
-    * Same as `start:dev` and also shows a visual representation of module sizes
+    * Same as `build` but sets webpack's `output.publicPath` to a relative path to enable testing on localhost
+  * `build:vis`
+    * Same as `build` but enables webpack-bundle-analyzer to analyze bundle module size
+  * `build:local:vis`
+    * Same as `build:local` but enables webpack-bundle-analyzer to analyze bundle module size
+  * `dev:build`
+    * Outputs bundle and assets to "/dist" directory in "development" mode
+  * `dev:build:vis`
+    * Same as `dev:build` but enables webpack-bundle-analyzer to analyze bundle module size
+  * `dev:start`
+    * Starts a development server that performs live reload when a file is saved
+  * `dev:start:vis`
+    * Same as `dev:start` but enables webpack-bundle-analyzer to analyze bundle module size
+  * `setup`
+    * Runs setup ** Currently in development **
 
 ## Issues:
   * On Windows, there may be an issue with `node-sass` where bindings may not be found for the current environment
