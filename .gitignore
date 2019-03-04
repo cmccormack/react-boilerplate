@@ -62,3 +62,7 @@ typings/
 
 # mac files
 .DS_Store
+
+# Build directories
+dist/
+build/
