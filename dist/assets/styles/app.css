@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-html,body{height:100%;padding:0;margin:0}body{background-color:lightcyan;font-family:'Roboto', sans-serif}main{display:flex;flex-direction:column;align-items:center}main #title{font-weight:300;font-size:3rem;padding:4rem;margin:0}main #icon{height:240px;width:auto;fill:green;text-align:center}
+html,body{height:100%}body{display:flex;justify-content:center;align-items:center;font-family:Arial, sans-serif;background-color:#282c34}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(180deg)}}img{animation:spin 5s linear infinite}#title{color:#fff;text-align:center}
 
 
 /*# sourceMappingURL=app.css.map*/
