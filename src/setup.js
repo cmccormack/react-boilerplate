@@ -16,16 +16,16 @@ const writeArrow = () => {
 }
 
 const isModuleInstalled = (module) => {
-  return shell.exec(`npm ls ${module}`, {silent: true}).code === 0
+  return shell.exec(`npm ls ${module}`, { silent: true }).code === 0
 }
 
-const uninstallModule = (module, env="-S") => {
-  shell.exec(`npm uninstall ${env} ${module}`, {silent: true})
+const uninstallModule = (module, env = "-S") => {
+  shell.exec(`npm uninstall ${env} ${module}`, { silent: true })
   return !isModuleInstalled(module)
 }
 
 const installModule = (module, env = "-S") => {
-  shell.exec(`npm install ${env} ${module}`, {silent: true})
+  shell.exec(`npm install ${env} ${module}`, { silent: true })
   return isModuleInstalled(module)
 }
 
@@ -38,7 +38,7 @@ const endProcess = (error) => {
 }
 
 const initGit = (cb) => {
-  cb = cb || function() {}
+  cb = cb || function () { }
   exec(
     "git init && git add . && git commit -m \"Initial commit\"",
     cb

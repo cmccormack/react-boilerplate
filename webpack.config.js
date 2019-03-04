@@ -1,24 +1,23 @@
-const path = require("path")
-const CleanWebpackPlugin = require("clean-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const CompressionPlugin = require("compression-webpack-plugin")
-const Visualizer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
+const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const Visualizer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-module.exports = env => {
-
-  const { prod=false, local=!prod, visualize=false } = env
-  console.info(`webpack env: ${prod ? "production" : "development"}`)
+module.exports = (env, { mode = "production" }) => {
+  const isProd = mode === "production";
+  const { local: isLocal = !isProd, visualize = false } = env || {};
+  console.info(`[ webpack mode: ${mode} ]`);
 
   return {
-    mode: prod ? "production" : "development",
     context: path.join(__dirname, "./"),
     entry: {
       app: "./src/index.js",
     },
     output: {
-      path: path.resolve(__dirname, "public"),
-      publicPath: local ? "./" : "/",
+      path: path.resolve(__dirname, "dist"),
+      publicPath: isLocal ? "./" : "/",
       filename: "[name].bundle.js",
     },
     resolve: {
@@ -43,14 +42,14 @@ module.exports = env => {
         {
           test: /\.(sa|sc|c)ss$/i,
           use: [
-            prod ? MiniCssExtractPlugin.loader : "style-loader",
+            isProd ? MiniCssExtractPlugin.loader : "style-loader",
             "css-loader",
             {
               loader: "sass-loader",
               options: {
-                outputStyle: prod ? "compressed" : "expanded",
-                sourceComments: !prod,
-                sourceMap: !prod,
+                outputStyle: isProd ? "compressed" : "expanded",
+                sourceComments: !isProd,
+                sourceMap: !isProd,
               },
             },
           ],
@@ -80,6 +79,6 @@ module.exports = env => {
         chunkFilename: "[id].css",
       }),
       visualize && new Visualizer(),
-    ].filter(_=>_),
-  }
-}
+    ].filter(Boolean),
+  };
+};

@@ -63,4 +63,6 @@ typings/
 # mac files
 .DS_Store
 
-.gitbackup
+# Build directories
+dist/
+build/

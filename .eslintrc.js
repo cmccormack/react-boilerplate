@@ -1,49 +1,30 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+  },
+  "extends": [
+    "prettier",
+    "prettier/react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2
+      }
     ],
-    "parser": "babel-eslint",
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "indent": [
-            "error",
-            2,
-            {
-                "SwitchCase": 1
-            }
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "never"
-        ],
-        "no-console": [
-            "error", {
-                allow: [
-                    "warn",
-                    "error",
-                    "info",
-                    "debug",
-                    "table"
-                ,]
-            },
-        ],
-        "comma-dangle": [
-            "error",
-            "always-multiline"
-        ],
-        "strict": 0,
-    }
-}
+  }
+};
