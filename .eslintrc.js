@@ -10,6 +10,7 @@ module.exports = {
     "prettier/react"
   ],
   "parserOptions": {
+    "ecmaVersion": 8,
     "ecmaFeatures": {
       "jsx": true
     },
