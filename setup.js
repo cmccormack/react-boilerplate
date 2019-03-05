@@ -2,17 +2,37 @@ const fs = require("fs");
 const exec = require("child_process").exec;
 const chalk = require("chalk");
 const shell = require("shelljs");
+const program = require("commander");
 
+program
+  .version(require("./package.json").version)
+  .command("[path]", "install your app in the specified path")
+  .action(path => {
+    pathValue = path;
+  });
+
+program.parse(process.argv);
+console.log(pathValue);
+
+// if (args.length !== 1) {
+//   process.stdout.write(chalk.red(" ✘"));
+//   process.stdout.write(" Invalid number of arguments, terminating...");
+//   process.exit(1);
+// }
+
+// console.log(args);
+
+process.exit(0);
 const writeCheck = () => {
-  process.stdout.write(chalk.green(" ✓"));
+  process.stdout.write(chalk.green("✓"));
 };
 
 const writeMark = () => {
-  process.stdout.write(chalk.red(" ✘"));
+  process.stdout.write(chalk.red("✘"));
 };
 
 const writeArrow = () => {
-  process.stdout.write(chalk.yellow("↪  "));
+  process.stdout.write(chalk.yellow("↪"));
 };
 
 const isModuleInstalled = module => {
