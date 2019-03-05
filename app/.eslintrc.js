@@ -1,15 +1,19 @@
 module.exports = {
   "env": {
-    "browser": false,
+    "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true,
+    "node": false,
   },
   "extends": [
     "prettier",
+    "prettier/react"
   ],
   "parserOptions": {
     "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "sourceType": "module"
   },
   "plugins": [
