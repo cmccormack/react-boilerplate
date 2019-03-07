@@ -1,27 +1,23 @@
 module.exports = {
-  "env": {
-    "browser": false,
-    "commonjs": true,
-    "es6": true,
-    "node": true,
+  env: {
+    browser: false,
+    commonjs: true,
+    es6: true,
+    node: true
   },
-  "extends": [
-    "prettier",
-  ],
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "module"
+  extends: ["prettier"],
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module"
   },
-  "plugins": [
-    "prettier"
-  ],
-  "rules": {
+  plugins: ["prettier"],
+  rules: {
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es5",
-        "tabWidth": 2
+        trailingComma: "es5",
+        tabWidth: 2
       }
-    ],
+    ]
   }
 };
