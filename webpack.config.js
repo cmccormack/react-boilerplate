@@ -64,6 +64,7 @@ module.exports = (env, { mode = "production" }) => {
     devServer: {
       contentBase: path.join(__dirname, "public"),
       compress: true,
+      historyApiFallback: true,
       port: 9000,
       open: true,
     },
